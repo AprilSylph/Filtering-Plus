@@ -1,0 +1,9 @@
+<!--
+  Do Not Disturb icon from Material Design Icons by Google
+  https://github.com/google/material-design-icons/blob/4ea68aa/src/notification/do_not_disturb/materialicons/24px.svg
+  Licensed under the Apache License 2.0
+-->
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="128" fill="#1A2735"/>
+  <path d="M64 16C37.504 16 16 37.504 16 64C16 90.496 37.504 112 64 112C90.496 112 112 90.496 112 64C112 37.504 90.496 16 64 16ZM64 102.4C42.784 102.4 25.6 85.216 25.6 64C25.6 55.12 28.624 46.96 33.712 40.48L87.52 94.288C81.04 99.376 72.88 102.4 64 102.4ZM94.288 87.52L40.48 33.712C46.96 28.624 55.12 25.6 64 25.6C85.216 25.6 102.4 42.784 102.4 64C102.4 72.88 99.376 81.04 94.288 87.52Z" fill="#EEEEEE"/>
+</svg>

@@ -1,12 +1,17 @@
 {
   "manifest_version": 2,
   "name": "Filtering+ for Tumblr",
-  "version": "0.0.1",
+  "version": "1.0.0",
 
   "short_name": "Filtering+",
   "author": "April Sylph",
 
   "description": "Filter tags or post content via right-click",
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
 
   "background": {
     "scripts": ["background.js"],
