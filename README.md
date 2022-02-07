@@ -1,6 +1,11 @@
 # Filtering+ for Tumblr
 Filter tags or post content via right-click.
 
+## Screenshots
+
+| ![](https://github.com/AprilSylph/Filtering-Plus/raw/firefox/assets/Filter%20this%20tag.png) | ![](https://github.com/AprilSylph/Filtering-Plus/raw/firefox/assets/Filter%20the%20phrase.png) |
+| --- | --- |
+
 ## Installation
 Coming soon!
 
