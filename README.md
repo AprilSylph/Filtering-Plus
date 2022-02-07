@@ -1,5 +1,5 @@
 # Filtering+ for Tumblr
-Filter tags or post content via right-click
+Filter tags or post content via right-click.
 
 ## Installation
 Coming soon!
