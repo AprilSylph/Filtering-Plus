@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Filtering+ for Tumblr",
+  "version": "0.0.1",
+
+  "short_name": "Filtering+",
+  "author": "April Sylph",
+
+  "description": "Filter tags or post content via right-click",
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "permissions": [
+    "activeTab",
+    "menus"
+  ],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "strict_min_version": "55.0a1"
+    }
+  }
+}

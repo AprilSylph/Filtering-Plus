@@ -1,0 +1,25 @@
+{
+  "license": "GPL-3.0",
+  "repository": "github:AprilSylph/Filtering-Plus",
+  "scripts": {
+    "test": "eslint .",
+    "lint-webextension": "web-ext lint",
+    "build-webextension": "web-ext build",
+    "sign-webextension": "web-ext sign"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-semistandard": "^16.0.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "web-ext": "^6.5.0"
+  },
+  "webExt": {
+    "sourceDir": "src/",
+    "build": {
+      "overwriteDest": true
+    }
+  }
+}
