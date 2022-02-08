@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Filtering+ for Tumblr",
   "version": "1.0.0",
 
@@ -15,17 +15,13 @@
   },
 
   "background": {
-    "scripts": ["background.js"],
-    "persistent": true
+    "service_worker": "background.js"
   },
   "permissions": [
     "activeTab",
-    "menus"
+    "contextMenus",
+    "scripting"
   ],
 
-  "browser_specific_settings": {
-    "gecko": {
-      "strict_min_version": "75.0a1"
-    }
-  }
+  "minimum_chrome_version": "88"
 }

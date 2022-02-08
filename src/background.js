@@ -1,4 +1,4 @@
-browser.menus.create({
+chrome.contextMenus.create({
   documentUrlPatterns: ['*://www.tumblr.com/*'],
   contexts: ['link'],
   id: 'tagFiltering',
@@ -9,7 +9,7 @@ browser.menus.create({
   title: 'Filter this tag'
 });
 
-browser.menus.create({
+chrome.contextMenus.create({
   documentUrlPatterns: ['*://www.tumblr.com/*'],
   contexts: ['selection'],
   id: 'contentFiltering',
@@ -23,23 +23,20 @@ const getTag = linkUrl => {
   return decodedTag;
 };
 
+const func = ({ url, body }) => window.tumblr.apiFetch(url, { method: 'POST', body });
+
 const onMenuItemClicked = function ({ linkUrl, selectionText }, { id: tabId }) {
   const url = `/v2/user/filtered_${linkUrl ? 'tags' : 'content'}`;
   const body = linkUrl
     ? { filtered_tags: [getTag(linkUrl)] }
     : { filtered_content: [selectionText] };
 
-  const code = `{
-    const { nonce } = [...document.scripts].find(script => script.getAttributeNames().includes('nonce'));
-    const script = document.createElement('script');
-    script.setAttribute('nonce', nonce);
-    script.textContent = 'window.tumblr.apiFetch("${url}", { method: "POST", body: ${JSON.stringify(body)} })';
-
-    document.documentElement.append(script);
-    script.remove();
-  }`;
-
-  browser.tabs.executeScript(tabId, { code });
+  chrome.scripting.executeScript({
+    target: { tabId },
+    func,
+    args: [{ url, body }],
+    world: 'MAIN'
+  });
 };
 
-browser.menus.onClicked.addListener(onMenuItemClicked);
+chrome.contextMenus.onClicked.addListener(onMenuItemClicked);
