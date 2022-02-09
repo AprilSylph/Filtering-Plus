@@ -6,7 +6,7 @@ This addon allows you to easily add tags and phrases to your Tumblr account's [t
 
 ## Screenshots
 
-| ![](https://github.com/AprilSylph/Filtering-Plus/raw/firefox/assets/Filter%20this%20tag.png) | ![](https://github.com/AprilSylph/Filtering-Plus/raw/firefox/assets/Filter%20the%20phrase.png) |
+| ![](https://raw.githubusercontent.com/AprilSylph/Filtering-Plus/chrome/assets/Filter%20this%20tag.jpg) | ![](https://raw.githubusercontent.com/AprilSylph/Filtering-Plus/chrome/assets/Filter%20the%20phrase.jpg) |
 | --- | --- |
 
 ## Installation
