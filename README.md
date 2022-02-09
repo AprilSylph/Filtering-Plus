@@ -11,6 +11,7 @@ This addon allows you to easily add tags and phrases to your Tumblr account's [t
 
 ## Installation
 - [Get this extension for Firefox](https://addons.mozilla.org/addon/filtering-for-tumblr/)
+- [View on the Chrome Web Store](https://chrome.google.com/webstore/detail/hbadilajmfoikbmpepajoppkfkpjckjm)
 
 ## Usage
 Right-click a tag link or a selected phrase to get an option to filter that tag or phrase.  
