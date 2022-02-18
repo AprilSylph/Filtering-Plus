@@ -25,9 +25,12 @@ const getTag = linkUrl => {
 
 const func = ({ url, body }) => window.tumblr.apiFetch(url, { method: 'POST', body });
 
-const onMenuItemClicked = function ({ linkUrl, selectionText }, { id: tabId }) {
-  const url = `/v2/user/filtered_${linkUrl ? 'tags' : 'content'}`;
-  const body = linkUrl
+const onMenuItemClicked = function ({ menuItemId, linkUrl, selectionText }, { id: tabId }) {
+  const url = menuItemId === 'tagFiltering'
+    ? '/v2/user/filtered_tags'
+    : '/v2/user/filtered_content';
+
+  const body = menuItemId === 'tagFiltering'
     ? { filtered_tags: [getTag(linkUrl)] }
     : { filtered_content: [selectionText] };
 
