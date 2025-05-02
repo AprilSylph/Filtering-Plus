@@ -2,10 +2,9 @@
   "license": "GPL-3.0",
   "repository": "github:AprilSylph/Filtering-Plus",
   "scripts": {
-    "test": "eslint .",
-    "lint-webextension": "web-ext lint",
-    "build-webextension": "web-ext build",
-    "sign-webextension": "web-ext sign"
+    "start": "web-ext run",
+    "test": "",
+    "posttest": "eslint src/"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
@@ -17,9 +16,9 @@
     "web-ext": "^8.6.0"
   },
   "webExt": {
-    "sourceDir": "src/",
     "build": {
       "overwriteDest": true
-    }
+    },
+    "sourceDir": "src/"
   }
 }
