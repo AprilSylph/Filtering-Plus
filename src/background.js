@@ -1,18 +1,17 @@
 chrome.contextMenus.create({
-  documentUrlPatterns: ['*://www.tumblr.com/*'],
   contexts: ['link'],
+  documentUrlPatterns: ['*://www.tumblr.com/*'],
   id: 'tagFiltering',
   targetUrlPatterns: [
     '*://www.tumblr.com/tagged/*',
-    '*://www.tumblr.com/blog/view/*/search/*',
-    '*://www.tumblr.com/blog/view/*/tagged/*'
+    '*://www.tumblr.com/*/tagged/*'
   ],
   title: 'Filter this tag'
 });
 
 chrome.contextMenus.create({
-  documentUrlPatterns: ['*://www.tumblr.com/*'],
   contexts: ['selection'],
+  documentUrlPatterns: ['*://www.tumblr.com/*'],
   id: 'contentFiltering',
   title: 'Filter the phrase: “%s”'
 });
@@ -26,7 +25,7 @@ const getTag = linkUrl => {
 
 const func = ({ url, body }) => window.tumblr.apiFetch(url, { method: 'POST', body });
 
-const onMenuItemClicked = function ({ menuItemId, linkUrl, selectionText }, { id: tabId }) {
+const onMenuItemClicked = function ({ linkUrl, menuItemId, selectionText }, { id: tabId }) {
   const url = menuItemId === 'tagFiltering'
     ? '/v2/user/filtered_tags'
     : '/v2/user/filtered_content';
