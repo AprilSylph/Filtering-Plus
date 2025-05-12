@@ -1,4 +1,4 @@
-chrome.contextMenus.create({
+browser.menus.create({
   contexts: ['link'],
   documentUrlPatterns: ['*://www.tumblr.com/*'],
   id: 'tagFiltering',
@@ -9,7 +9,7 @@ chrome.contextMenus.create({
   title: 'Filter this tag'
 });
 
-chrome.contextMenus.create({
+browser.menus.create({
   contexts: ['selection'],
   documentUrlPatterns: ['*://www.tumblr.com/*'],
   id: 'contentFiltering',
@@ -34,7 +34,7 @@ const onMenuItemClicked = function ({ linkUrl, menuItemId, selectionText }, { id
     ? { filtered_tags: [getTag(linkUrl)] }
     : { filtered_content: [selectionText] };
 
-  chrome.scripting.executeScript({
+  browser.scripting.executeScript({
     target: { tabId },
     func,
     args: [{ url, body }],
@@ -42,4 +42,4 @@ const onMenuItemClicked = function ({ linkUrl, menuItemId, selectionText }, { id
   });
 };
 
-chrome.contextMenus.onClicked.addListener(onMenuItemClicked);
+browser.menus.onClicked.addListener(onMenuItemClicked);
