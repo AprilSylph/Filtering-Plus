@@ -14,7 +14,7 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-promise": "^5.2.0",
-    "web-ext": "^8.6.0"
+    "web-ext": "^8.7.1"
   },
   "webExt": {
     "build": {
