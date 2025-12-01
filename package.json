@@ -9,9 +9,9 @@
   },
   "devDependencies": {
     "chrome-webstore-upload-cli": "^3.5.0",
-    "eslint": "^9.39.0",
+    "eslint": "^9.39.1",
     "neostandard": "^0.12.2",
-    "web-ext": "^9.1.0"
+    "web-ext": "^9.2.0"
   },
   "webExt": {
     "build": {
