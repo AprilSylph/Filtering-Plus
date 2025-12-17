@@ -6,6 +6,9 @@ on:
       src/**
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   pull_request:
     name: Pull request
