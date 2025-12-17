@@ -23,7 +23,8 @@ const getTag = linkUrl => {
   return decodedTag;
 };
 
-const func = ({ url, body }) => window.tumblr.apiFetch(url, { method: 'POST', body });
+const func = ({ url,
+  body }) => window.tumblr.apiFetch(url, { method: 'POST', body });
 
 const onMenuItemClicked = function ({ linkUrl, menuItemId, selectionText }, { id: tabId }) {
   const url = menuItemId === 'tagFiltering'
