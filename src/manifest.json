@@ -30,9 +30,6 @@
       "id": "{fb1afd1b-278d-440b-80e5-91ec9b5e8a16}",
       "data_collection_permissions": { "required": ["none"] },
       "strict_min_version": "128.0"
-    },
-    "gecko_android": {
-      "strict_min_version": "128.0"
     }
   }
 }
