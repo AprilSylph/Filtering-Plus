@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Upload source
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: Filtering+ for Tumblr (#${{ github.event.pull_request.number }})
           path: src/**
@@ -29,7 +29,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Upload source
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: Filtering+ for Tumblr (${{ github.ref_name }} ${{ github.sha }})
           path: src/**
