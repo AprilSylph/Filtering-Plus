@@ -1,9 +1,11 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
+    commit-message:
+      prefix: "build"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: "quarterly"
     groups:
       dev-dependencies:
         applies-to: "version-updates"
@@ -11,13 +13,17 @@ updates:
         update-types:
           - "minor"
           - "patch"
+    labels: [ ]
   - package-ecosystem: "github-actions"
+    commit-message:
+      prefix: "ci"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: "quarterly"
     groups:
       ci-dependencies:
         applies-to: "version-updates"
         update-types:
           - "minor"
           - "patch"
+    labels: [ ]
