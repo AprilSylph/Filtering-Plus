@@ -3,9 +3,11 @@
   "repository": "github:AprilSylph/Filtering-Plus",
   "type": "module",
   "scripts": {
+    "test": "web-ext lint",
+    "posttest": "eslint src/",
+    "autofix": "eslint src/ --fix",
     "start": "web-ext run",
-    "test": "",
-    "posttest": "eslint src/"
+    "build": "web-ext build"
   },
   "devDependencies": {
     "chrome-webstore-upload-cli": "^3.5.0",
