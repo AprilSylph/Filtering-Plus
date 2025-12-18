@@ -29,11 +29,16 @@ jobs:
           name: Filtering+ for Tumblr (#${{ github.event.pull_request.number }})
           path: src/**
 
-      - if: ${{ github.event_name != 'pull_request' }}
-        name: Upload source (push, workflow_dispatch)
+      - id: get_short_sha
+        if: ${{ github.event_name != 'pull_request' }}
+        name: Get abbreviated commit SHA
+        run: echo "SHORT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - if: ${{ steps.get_short_sha.outcome == 'success' }}
+        name: Upload artifact (push, workflow_dispatch)
         uses: actions/upload-artifact@v6
         with:
-          name: Filtering+ for Tumblr (${{ github.ref_name }} ${{ github.sha }})
+          name: Filtering+ for Tumblr (${{ github.ref_name }} ${{ steps.get_short_sha.outputs.SHORT_SHA }})
           path: src/**
   test:
     name: Test
