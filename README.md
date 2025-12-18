@@ -1,4 +1,4 @@
-# Filtering+ for Tumblr
+# Filtering+ for Tumblr [![CI](https://github.com/AprilSylph/Filtering-Plus/actions/workflows/ci.yml/badge.svg)](https://github.com/AprilSylph/Filtering-Plus/actions/workflows/ci.yml) [![neostandard javascript style](https://img.shields.io/badge/code_style-neostandard-F7DF1E?logo=javascript)](https://github.com/neostandard/neostandard)
 Filter tags or post content via right-click.
 
 ## Features
