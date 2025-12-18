@@ -3,35 +3,29 @@ name: Build
 on:
   pull_request:
     paths:
-      src/**
+      - src/**
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  pull_request:
-    name: Pull request
+  artifact:
+    name: Artifact
     runs-on: ubuntu-slim
-    if: ${{ github.event_name == 'pull_request' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Upload source
+      - if: ${{ github.event_name == 'pull_request' }}
+        name: Upload source (pull_request)
         uses: actions/upload-artifact@v6
         with:
           name: Filtering+ for Tumblr (#${{ github.event.pull_request.number }})
           path: src/**
-  workflow_dispatch:
-    name: Workflow dispatch
-    runs-on: ubuntu-slim
-    if: ${{ github.event_name == 'workflow_dispatch' }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v6
 
-      - name: Upload source
+      - if: ${{ github.event_name == 'workflow_dispatch' }}
+        name: Upload source (workflow_dispatch)
         uses: actions/upload-artifact@v6
         with:
           name: Filtering+ for Tumblr (${{ github.ref_name }} ${{ github.sha }})
