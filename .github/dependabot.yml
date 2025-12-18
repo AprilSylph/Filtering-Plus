@@ -5,7 +5,7 @@ updates:
       prefix: "build"
     directory: "/"
     schedule:
-      interval: "quarterly"
+      interval: "daily"
     groups:
       dev-dependencies:
         applies-to: "version-updates"
