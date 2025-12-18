@@ -9,11 +9,32 @@ on:
       - package*.json
       - eslint.config.js
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-slim
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - if: ${{ github.event_name == 'pull_request' }}
+        name: Upload artifact (pull_request)
+        uses: actions/upload-artifact@v6
+        with:
+          name: Filtering+ for Tumblr (#${{ github.event.pull_request.number }})
+          path: src/**
+
+      - if: ${{ github.event_name != 'pull_request' }}
+        name: Upload source (push, workflow_dispatch)
+        uses: actions/upload-artifact@v6
+        with:
+          name: Filtering+ for Tumblr (${{ github.ref_name }} ${{ github.sha }})
+          path: src/**
   test:
     name: Test
     runs-on: ubuntu-slim
