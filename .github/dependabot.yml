@@ -28,4 +28,4 @@ updates:
           - "minor"
           - "patch"
     labels:
-      - ""
+      - "bot"
