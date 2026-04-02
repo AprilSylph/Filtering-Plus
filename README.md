@@ -7,8 +7,8 @@ This addon allows you to easily add tags and phrases to your Tumblr account's [t
 ## Screenshots
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AprilSylph/Filtering-Plus/0ff95fd177d2ce7266d156d48765251d12378be3/assets/screenshots/dark.png">
-  <img src="https://raw.githubusercontent.com/AprilSylph/Filtering-Plus/0ff95fd177d2ce7266d156d48765251d12378be3/assets/screenshots/light.png">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AprilSylph/Filtering-Plus/94f08f8a7f28a41fccab7a811eaf7937453508b9/assets/screenshots/dark.webp">
+  <img src="https://raw.githubusercontent.com/AprilSylph/Filtering-Plus/94f08f8a7f28a41fccab7a811eaf7937453508b9/assets/screenshots/light.webp">
 </picture>
 
 ## Installation
