@@ -23,12 +23,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Upload to Chrome Web Store
+      - name: Upload to Web Store
         run: npx chrome-webstore-upload
         env:
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
           EXTENSION_ID: ${{ secrets.EXTENSION_ID }}
+          PUBLISHER_ID: ${{ secrets.PUBLISHER_ID }}
           REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
   firefox:
     name: Firefox
