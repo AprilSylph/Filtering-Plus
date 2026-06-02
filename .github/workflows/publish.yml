@@ -8,6 +8,29 @@ permissions:
   contents: read
 
 jobs:
+  chrome:
+    name: Chrome
+    runs-on: ubuntu-slim
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Upload to Web Store
+        run: npx chrome-webstore-upload
+        env:
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          EXTENSION_ID: ${{ secrets.EXTENSION_ID }}
+          PUBLISHER_ID: ${{ secrets.PUBLISHER_ID }}
+          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
   firefox:
     name: Firefox
     runs-on: ubuntu-slim
@@ -33,26 +56,3 @@ jobs:
           WEB_EXT_API_SECRET: ${{ secrets.WEB_EXT_API_SECRET }}
           WEB_EXT_APPROVAL_TIMEOUT: 0
           WEB_EXT_CHANNEL: listed
-  chrome:
-    name: Chrome
-    runs-on: ubuntu-slim
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v6
-        with:
-          node-version: lts/*
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Upload to Web Store
-        run: npx chrome-webstore-upload
-        env:
-          CLIENT_ID: ${{ secrets.CLIENT_ID }}
-          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-          EXTENSION_ID: ${{ secrets.EXTENSION_ID }}
-          PUBLISHER_ID: ${{ secrets.PUBLISHER_ID }}
-          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
