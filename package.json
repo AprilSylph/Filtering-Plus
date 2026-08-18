@@ -13,7 +13,7 @@
     "chrome-webstore-upload-cli": "^4.0.1",
     "eslint": "^9.39.2",
     "neostandard": "^0.13.0",
-    "web-ext": "^10.4.0"
+    "web-ext": "^10.6.0"
   },
   "webExt": {
     "build": {
