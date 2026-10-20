@@ -1,4 +1,4 @@
-import neostandard from 'neostandard';
+import { neostandard } from 'neostandard';
 
 /**
  * Semistandard style guide, via neostandard package.
